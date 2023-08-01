@@ -6,11 +6,11 @@ function App() {
     const onChange = (event) => setToDo(event.target.value)
     const onSubmit = (event) => {
         event.preventDefault()
-        if(toDo===""){
+        if (toDo === "") {
             return;
         }
         setToDo("")
-        setToDos(currentArray=>[toDo, ...currentArray])
+        setToDos(currentArray => [toDo, ...currentArray])
     }
     console.log(toDos)
 
@@ -25,6 +25,10 @@ function App() {
                 />
                 <button>Add To Do</button>
             </form>
+            <hr/>
+            <ul>
+                {toDos.map((item, index) =>( <li key={index}>{item}</li>))}
+            </ul>
         </div>
     )
 }
